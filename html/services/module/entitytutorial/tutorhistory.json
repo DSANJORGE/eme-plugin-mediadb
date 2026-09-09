@@ -69,7 +69,10 @@
       "questionid": #jesc($answer.get("entityquestion")),
       "confidence": #jesc($answer.get("answerconfidence")),
       "selectedoption": #jesc($answer.get("selectedoption")),
-      "iscorrect": #jesc($answer.get("iscorrect"))
+      "iscorrect": #jesc($answer.get("iscorrect")),
+      "tutorial": #jesc($answer.get("entitytutorial")),
+      "section": #jesc($answer.get("componentsection")),
+      "date": #jesc($answer.get("datecreated"))
     }
   #end
   ]
