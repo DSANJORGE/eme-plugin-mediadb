@@ -1,0 +1,6 @@
+<page>
+	<path-action name="LlmEvalModule.evalCall"/>
+	<permission name="view">
+		<blank/>
+	</permission>
+</page>
