@@ -1,23 +1,31 @@
+## Built outside the literal: a directive inside #jesc("...") breaks the parse.
+#set($rubricblock = "")
+#if($rubric && $rubric != "")
+#set($rubricblock = "
+
+Additional grading rubric:
+${rubric}")
+#end
 {
 	"model": "${model}",
 	"messages": [
 		{
 			"role": "system",
-			"content": #jesc("You grade one reply from a corporate training tutor. Score 1-5 on three axes and give one short reason.
-correctness: is every factual claim right and consistent with the reference excerpts?
-groundedness: does the reply only use the excerpts or the question in play, with the citations copied exactly, or explicitly say it cannot find it?
-tone: calm senior-colleague register in Spanish, tú form, no shaming, no system-style refusals, within length rules.
-Return only the JSON object.")
+			"content": #jesc("You grade one assistant reply to a question. Score 1-5 on three axes and give one short reason.
+correctness: is every factual claim right and consistent with the reference material, when reference material is given?
+groundedness: does the reply stay within the reference material and the question, with any citation copied exactly, or say plainly that it cannot find the answer?
+tone: is the register appropriate for the question, free of system-style refusals, and within any length rules given?
+Return only the JSON object.${rubricblock}")
 		},
 		{
 			"role": "user",
-			"content": #jesc("LEARNER QUESTION:
+			"content": #jesc("QUESTION:
 ${question}
 
-REFERENCE EXCERPTS:
+REFERENCE:
 ${reference}
 
-TUTOR REPLY:
+REPLY:
 ${reply}")
 		}
 	],
