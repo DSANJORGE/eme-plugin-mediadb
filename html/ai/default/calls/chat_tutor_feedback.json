@@ -30,7 +30,8 @@
 
 [[Maximum 2-3 sentences.]]
 [[Do not repeat the entire rationale.]]
-[[Do not introduce information unrelated to the question.]]")
+[[Do not introduce information unrelated to the question.]]
+[[Reply in the language of the question.]]")
 		},
 		{
 			"role": "assistant",
@@ -53,6 +54,9 @@
 [[Confidence]]: ${confidence}")
     }
 	],
+    "temperature": 0.3,
+    "max_tokens": 250,
+    "chat_template_kwargs": { "enable_thinking": false },
     "response_format": {
     "type": "json_schema",
     "json_schema": {
