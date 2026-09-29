@@ -1,10 +1,10 @@
 {
-#ifnotnull($allusers)
+#ifnotnull($suggestions)
 	"response": {
 		"status": "ok"
 	},
 	"users": [ 
-		#foreach($u in $allusers)
+		#foreach($u in $suggestions)
 			#if($foreach.count > 1),#end
 		{
 			"username" : "$u.id",
@@ -12,16 +12,16 @@
 			"lastname" : "$u.lastName",
 			"screenname" : "$u.screenname",
 			"email" : "$u.email"
-		#ifnotnull($u.assetportrait)
-			#set($assetportrait = "$!siteroot${mediaarchive.asLinkToPreview($u.assetportrait, 'image200x200')}"),
-			"assetportrait" : "$assetportrait"
-		#end
+			#ifnotnull($u.assetportrait)
+			#set($assetportrait = "$!siteroot$mediaarchive.asLinkToPreview($u.assetportrait, 'image200x200')"),
+			"assetportrait" : "$assetportrait" 
+			#end
 		}
 	#end
 	]
 #end
 
-	#ifnull($allusers)
+	#ifnull($suggestions)
 	"response": {
 		"status": "error"
 	}

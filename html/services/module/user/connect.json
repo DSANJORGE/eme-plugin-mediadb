@@ -1,0 +1,7 @@
+{
+	"response": {
+		"status": "ok",
+		"userid": #jesc($user.id)
+	},
+	"channel": #jesc($currentchannel.id)
+}

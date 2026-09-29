@@ -1,5 +1,5 @@
 <page>
   <path-action name="JsonAdminModule.preprocess" />
   <property name="module">user</property>
-  <path-action name="EmeProfileModule.getAllProfiles" />
+  <path-action name="DirectMessageModule.loadChat" />
 </page>

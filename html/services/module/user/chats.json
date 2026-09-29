@@ -1,0 +1,39 @@
+{
+#ifnotnull($chatlist)
+	"response": {
+		"status": "ok"
+	},
+	"chats": [ 
+		#foreach($chat in $chatlist)
+			#if($foreach.count > 1),#end
+      #set($u = $chat.user)
+      #set($lastmsg = $chat.lastmessage) 
+      #set($channel = $chat.channel) 
+		{
+			"channel": #jesc($channel.id),
+      "username" : #jesc($u.id),
+			"firstname": #jesc($u.firstName),
+			"lastname" : #jesc($u.lastName),
+			"email" : #jesc($u.email)
+		#ifnotnull($u.assetportrait)
+			#set($assetportrait = "$!siteroot$mediaarchive.asLinkToPreview($u.assetportrait, 'image200x200')"),
+			"assetportrait" : "$assetportrait"
+		#end
+      #ifnotnull($lastmsg),
+      "lastmessage" : {
+        "id": "$!lastmsg.id",
+        "message": #jesc($lastmsg.message),
+        "date" : #jesc($!lastmsg.date)
+      }
+      #end
+		}
+	#end
+	]
+#end
+
+	#ifnull($chatlist)
+	"response": {
+		"status": "error"
+	}
+	#end
+}
