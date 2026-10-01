@@ -40,7 +40,7 @@
 						<li>
 							<a class="ajax"
 								href="$applink/views/modules/${agentcontext.entitymoduleid}/editors/entitychat/chatterbox/changescenario.html"
-								data-targetdiv="chatterbox"
+								data-targetdiv="changescenario"
 								data-channel="$!{channel.getId()}"
 								data-currentscenario="$scenario.id"
 								data-functionname="${scenario.id}_welcome"
@@ -50,6 +50,7 @@
 						</li>
 					#end
 				</ul>
+				<div id="changescenario"></div>
 				#ifnull($scenarios)
 					<p>[[I can help you create tutorials, answer your questions, generate images, and more.]]</p>
 				#end
