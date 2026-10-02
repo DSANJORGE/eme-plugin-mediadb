@@ -7,14 +7,13 @@
 	<property name="virtual">true</property>
 		<property name="collectionidinpath">true</property>
 	
-	<path-action name="AssetControlModule.loadAssetPermissions" alltypes="true" />
 	<path-action name="Admin.allowViewing" alltypes="true">
 		<login-path>/${applicationid}/authentication/nopermission.jpg</login-path>
 	</path-action>
 	
 	<permission name="view">
 	<or>
-		 <userprofile property="download" equals="true" />
+		 <action name="AssetControlModule.loadDownloadPermission" />
 		 <action name="ProjectModule.checkViewCollection" /> 
 	</or>
 	</permission>
