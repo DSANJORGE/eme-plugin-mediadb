@@ -29,6 +29,9 @@
 		#ifnotnull($userprofile.dataconsent),
 		"dataconsent" : "$userprofile.dataconsent"
 		#end
+		#ifnotnull($firebasepassword),
+		"firebasepassword" : "$firebasepassword"
+		#end
 	}
 	#end
 }
