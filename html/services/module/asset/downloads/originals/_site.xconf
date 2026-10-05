@@ -6,10 +6,8 @@
 	<property name="sourcepathhasfilename">true</property>
 	
 	<generator name="originalDownloadGenerator"/>
-	
-	<path-action name="Admin.allowViewing" alltypes="true">
-		<login-path>/${applicationid}/authentication/logon.html</login-path>
-	</path-action>
+
+	<path-action name="Admin.allowViewing" alltypes="true" forbid="true"/>
 	
 	<permission name="view">
 	<or>
@@ -18,16 +16,5 @@
 		<action name="OrderModule.canViewAsset" />
 	</or>
 	</permission>
-	
-	
-	<permission name="viewasset">
-		<or>
-			<and>
-			     <userprofile property="download" equals="true" />
-				<action name="AssetControlModule.canViewAsset" /> 
-			</and>
-			<action name="OrderModule.canViewAsset" />
-		</or>
-	</permission>	
-		
+			
 </page>
