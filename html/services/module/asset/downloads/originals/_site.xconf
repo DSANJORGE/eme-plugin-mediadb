@@ -6,7 +6,7 @@
 	<property name="sourcepathhasfilename">true</property>
 	
 	<generator name="originalDownloadGenerator"/>
-
+	
 	<path-action name="Admin.allowViewing" alltypes="true" forbid="true"/>
 	
 	<permission name="view">
