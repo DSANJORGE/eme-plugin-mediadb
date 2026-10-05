@@ -3,6 +3,7 @@
 <page>
 	<path-action name="Admin.autoLogin" alltypes="true" />	
 	<path-action name="ProfileModule.loadUserProfile" alltypes="true"/>
+	<path-action name="Admin.loadPermissions" alltypes="true" />
 
 	<permission name="showunwatermarkedassets">
 		<userprofile property="showunwatermarkedassets" equals="true" />
